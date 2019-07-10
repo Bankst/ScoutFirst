@@ -14,6 +14,7 @@ class AddNoteRoute extends Component {
                     placeholder='Enter Note Title'
                 />
 
+
             </ScrollView>
 
         );

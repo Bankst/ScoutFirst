@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Alert, ScrollView, FlatList, Image, TextInput, View, Text, AsyncStorage} from 'react-native';
+import { AppRegistry, StyleSheet, Alert, ScrollView, FlatList, Image, TextInput, View, Text, AsyncStorage } from 'react-native';
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
-import {Icon, Button} from 'react-native-elements'
-import  NoteCard from '../../components/NoteCard.js'
+import { Icon, Button } from 'react-native-elements'
+import NoteCard from '../../components/NoteCard.js'
 const styles = StyleSheet.create({
     container: {
         //justifyContent: 'center',
@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     },
     subCenterView: {
         justifyContent: 'center',
-        alignItems:'center',
+        alignItems: 'center',
     },
-    
+
     stdText: {
         fontSize: 20,
         fontWeight: 'bold',
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         color: 'white',
-        
+
     },
     teamImage: {
-        width: 200, 
+        width: 200,
         height: 200,
         borderRadius: 100,
         //borderWidth: 5,
@@ -45,80 +45,64 @@ const styles = StyleSheet.create({
 });
 
 class NotesRoute extends Component {
-    static navigationOptions = ({navigation}) => {
-        return{
+    static navigationOptions = ({ navigation }) => {
+        return {
             title: 'Notes',
             headerStyle: { backgroundColor: '#43C59E' },
             headerTitleStyle: { color: 'black' },
-            headerRight:               
-            <Button 
-                icon={<Icon
-                    name='add'//plussquare
-                    size={25}
-                    color='black'/>}
-                type='clear'
-                onPress={async () => {
-                    AsyncStorage.get
-                    try {
-                        const myArray = await AsyncStorage.getItem('Notes');
-                        if (myArray !== null) {
-                          // We have data!!
-                          let newArray = JSON.parse(myArray).push('New Note');
-                          try {
-                            await AsyncStorage.setItem('Notes', JSON.stringify(newArray));
-                            navigation.navigate('Note')
-                          } catch (error) {
-                            // Error saving data
-                          }
+            headerRight:
+                <Button
+                    icon={<Icon
+                        name='add'//plussquare
+                        size={25}
+                        color='black' />}
+                    type='clear'
+                    onPress={
+                        () => navigation.navigate('Note')
 
-                        }
-                      } catch (error) {
-                        // Error retrieving data
-                      }
 
-                    //JSON.parse(myArray)
 
-                    //AsyncStorage.setItem('Note: 1', '')
-                }}
-            />
+                        //AsyncStorage.setItem('Note: 1', '')
+                    }
+                />
         };
     }
-    
+
     componentDidMount() {
     }
 
-    _screenNav(){
+    _screenNav() {
 
     }
 
-    render(){
+    render() {
         //const {navigate} = this.props.navigation;
-        const {navigate} = this.props.navigation;
+        const { navigate } = this.props.navigation;
 
-        return(
+        return (
             <ScrollView style={styles.container}>
-                <View style={{...styles.subCenterView, paddingTop: 50}}>
-                
-                <NoteCard
-                    title='Albany'
-                    subtitle='118 The Robonaughts go off'
-                    icon='folder'
-                    onPress={() => navigate('Note')}
-                />
+                <View style={{ ...styles.subCenterView, paddingTop: 50 }}>
 
-                <NoteCard
-                    title='Worlds'
-                    subtitle='Housten Texas yee'
-                    icon='folder'
-                    onPress={() => navigate('Note')}
-                />
-                
-                <NoteCard
-                    title='State'
-                    subtitle='ATL we booling in pch'
-                    icon='folder'
-                    onPress={() => navigate('Note')}
-                />
+                    <NoteCard
+                        title='Albany'
+                        subtitle='118 The Robonaughts go off'
+                        icon='folder'
+                        onPress={() => navigate('Note', { index: 1 })}
+                    />
+
+                    <NoteCard
+                        title='Worlds'
+                        subtitle='Housten Texas yee'
+                        icon='folder'
+                        onPress={() => navigate('Note')}
+                    />
+
+                    <NoteCard
+                        title='State'
+                        subtitle='ATL we booling in pch'
+                        icon='folder'
+                        onPress={() => navigate('Note')}
+                    />
                 </View>
             </ScrollView>
         );
