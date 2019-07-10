@@ -1,0 +1,56 @@
+// ideas.txt
+// July 1, 2019
+//
+// Joshua Davis
+
+Names?: {
+    ScoutFRC
+    ScoutFirst
+}
+
+BOOT: {
+    - log in
+    (make new account, or sign in with google or apple or facebook)
+    - join, or create a team
+    (would be cool to have unique team, but what if some ppl meme)
+
+}
+
+NotesRoute: {
+    - general scouting notes 
+    - a rearrangable textview for a pick list
+    (maybe integrates with scouting data, shows all team and bubble pic of robot, and estimated rank, drag to change order)
+    - pit scouting data organized neatly seperated by robot
+    (not sure if this will be standardized for everyone or allow teams to switch up questions)
+    - allow teams to take images of robots and see them in your live scouting data
+}
+
+TeamRoute: {
+    - View your team's analytics
+    - your name and member status
+    (member status is MEMBER or OFFICER)
+    - see past tornaments and evolution of status
+    (maybe integrate with blue alliance)
+
+}
+
+ScoutingRoute: {
+    - scouting data split up by tornament
+    - select a tornament or add a new tornament
+    (only those with Officer status can add new tornaments)
+    - select torney and enter scouting data 
+    (probably set scouting questions, but maybe flexable)
+    - view data live, watch projections, and search teams data to find out information
+    - group scouting! add other teams to your tornament via teamID (or some unique key)
+    - see who and what team inputs data
+    - redudency either averages the score or takes the median or can be deleted by officers (of any team in the group?)
+    - integrate with blue alliance to see upcoming matches
+    - see in diffrent team views robot, pit scouting, and live scouting all in one place
+
+}
+
+
+what analytics?: {
+
+
+}
