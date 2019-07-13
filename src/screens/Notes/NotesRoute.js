@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Alert, ScrollView, FlatList, Image, TextInput, View, Text, AsyncStorage } from 'react-native';
 import { Avatar, Card, Title, Paragraph } from 'react-native-paper';
 import { Icon, Button } from 'react-native-elements'
-import NoteCard from '../../components/NoteCard.js'
+import NoteCard from '../../components/Cards/NoteCard.js'
 const styles = StyleSheet.create({
     container: {
         //justifyContent: 'center',

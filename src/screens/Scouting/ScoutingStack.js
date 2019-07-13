@@ -1,25 +1,23 @@
 import ScoutingRoute from './ScoutingRoute'
+import LiveScoutingForm from './LiveScoutingForm'
+import TeamListView from './TeamListView'
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import React, { Component } from 'react';
-import {Text, View} from 'react-native'
 
 const ScoutingStack = createStackNavigator({
-    Scouting: {
-         screen: ScoutingRoute,
-         navigationOptions:{
-           title: "Scouting ",
-           headerBackTitle: "Scouting",
-           headerStyle: {
-              backgroundColor: '#43C59E',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-              color: 'black',
-            },
-         }
-       }, //,
-       //details: {screen: LaunchDetails}
-})
+  Tornaments: {
+    screen: ScoutingRoute,
+
+  },
+  LiveScoutingForm: {
+    screen: LiveScoutingForm,
+  },
+  TeamListView: {
+    screen: TeamListView
+  }
+},
+  {
+    initialRouteName: 'Tornaments',
+
+  })
 
 export default ScoutingStack

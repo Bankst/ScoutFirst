@@ -1,26 +1,24 @@
 import { StyleSheet } from 'react-native';
-
-const backgroundColor = '#121212'
-const primaryColor = '#43C59E'
+import Colors from './Colors'
 
 const Styles = StyleSheet.create({
     container: {
         //justifyContent: 'center',
         //alignItems:'center',
-        backgroundColor: backgroundColor,//'#2c2d3c',//'#900C3F',//'#3DFAFF',
+        backgroundColor: Colors.backgroundColor, //'#2c2d3c',//'#900C3F',//'#3DFAFF',
         width: 100 + '%',
         height: 100 + '%',
-        //flex: 1,
+
     },
     scrollViewCenter: {
-        backgroundColor: backgroundColor,
+        backgroundColor: Colors.backgroundColor,
 
     },
     subCenterView: {
         justifyContent: 'center',
-        alignItems:'center',
+        alignItems: 'center',
     },
-    
+
     stdText: {
         fontSize: 20,
         fontWeight: 'bold',
@@ -31,15 +29,14 @@ const Styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         color: 'white',
-        
+
     },
-    teamImage: {
-        width: 200, 
+    largeTeamImage: {
+        width: 200,
         height: 200,
         borderRadius: 100,
 
     }
-
 
 });
 
