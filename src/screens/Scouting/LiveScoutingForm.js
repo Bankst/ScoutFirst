@@ -4,6 +4,9 @@ import { Button, Icon } from 'react-native-elements'
 import { TextInput } from 'react-native-paper'
 import SelectMultiple from 'react-native-select-multiple'
 import Styles from '../../styles/Styles'
+import TextSwitch from '../../components/ScoutingFormInputs/TextSwitch'
+import TextInputField from '../../components/ScoutingFormInputs/TextInputField'
+import ItemPicker from '../../components/ScoutingFormInputs/ItemPicker'
 import Colors from '../../styles/Colors'
 
 const fruits = ['Apple', 'Orange', 'Grape']
@@ -31,32 +34,19 @@ class LiveScoutingForm extends Component {
         return (
             <ScrollView style={Styles.scrollViewCenter}>
 
-                <Switch
-                    disabled='false'
-                    trackColor={{ true: Colors.primaryColor }}
+                <ItemPicker
+                    question='Autonomous?'
+                    pickerItems={['Basic Auto', 'No Auto', 'Full Auto']}
+                />
+                <TextSwitch
+                    question={'Did they park'}
                 />
 
-                <TextInput
-                    placeholder='Enter Number of Balls'
-                    backgroundColor='white'
+                <TextSwitch
+                    question={'Did they climb'}
                 />
-
-                <Picker
-                    selectedValue={this.state.language}
-                    style={{ height: 250, width: 100, backgroundColor: 'white' }}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.setState({ language: itemValue })
-                    }>
-                    <Picker.Item label="Java" value="java" />
-                    <Picker.Item label="akdf" value="djfld" />
-
-                </Picker>
-
-                <SelectMultiple
-                    style={{ color: 'white' }}
-                    items={fruits}
-                    selectedItems={this.state.selectedFruits}
-                    onSelectionsChange={this.onSelectionsChange}
+                <TextInputField
+                    question='what is their intake design'
                 />
 
             </ScrollView>
@@ -65,3 +55,13 @@ class LiveScoutingForm extends Component {
 }
 
 export default LiveScoutingForm;
+
+
+/*
+                <SelectMultiple
+                    style={{ color: 'white' }}
+                    items={fruits}
+                    selectedItems={this.state.selectedFruits}
+                    onSelectionsChange={this.onSelectionsChange}
+                />
+                */

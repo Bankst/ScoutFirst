@@ -12,7 +12,7 @@ class TeamCard extends Component {
                     onPress={this.props.onPress}
                     style={{ width: 100 + '%', backgroundColor: 'white', paddingBottom: 0 }}>
                     <Card.Title title={this.props.teamName} subtitle={this.props.subtitle} left={(props) => <Avatar.Icon {...props} icon={this.props.icon} />} />
-                    <Card.Content style={{ alignItems: 'left' }}>
+                    <Card.Content>
                         <Text style={{
                             backgroundColor: 'black',
                             color: 'white',

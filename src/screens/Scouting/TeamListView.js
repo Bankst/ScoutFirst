@@ -31,6 +31,7 @@ class TeamListView extends Component {
     };
 
     render() {
+        ``
         return (
             <Swiper
                 bounces
