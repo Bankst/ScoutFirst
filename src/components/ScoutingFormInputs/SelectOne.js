@@ -4,7 +4,7 @@ import { View, Text, FlatList } from 'react-native'
 import { Card } from 'react-native-paper';
 import Colors from '../../styles/Colors'
 
-class SelectMultiple extends Component {
+class SelectOne extends Component {
 
     state = {
         checked: (new Array(this.props.selections.length)).fill(false),
@@ -27,6 +27,7 @@ class SelectMultiple extends Component {
                     uncheckedIcon='circle-o'
                     checked={this.state.checked[index]}
                     onPress={() => {
+                        this.state.checked.fill(false)
                         this.state.checked[index] = !this.state.checked[index]
                         this.forceUpdate()
                         // probably bad form
@@ -54,4 +55,4 @@ class SelectMultiple extends Component {
 
 }
 
-export default SelectMultiple;
+export default SelectOne;

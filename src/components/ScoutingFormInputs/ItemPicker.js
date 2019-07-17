@@ -27,7 +27,6 @@ class ItemPicker extends Component {
                         onValueChange={(itemValue, itemIndex) =>
                             this.setState({ language: itemValue })
                         }>
-
                         {pickerItems}
 
                     </Picker>
