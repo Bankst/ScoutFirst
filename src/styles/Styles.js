@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import Colors from './Colors'
+
+const defaultFont = Platform.OS == 'android' ? 'Roboto':'San Francisco';
 
 const Styles = StyleSheet.create({
     container: {
@@ -21,21 +23,27 @@ const Styles = StyleSheet.create({
 
     stdText: {
         fontSize: 20,
+        fontFamily: defaultFont,
         fontWeight: 'bold',
         color: 'white',
-
     },
     largeTitle: {
         fontSize: 40,
+        fontFamily: defaultFont,
         fontWeight: 'bold',
         color: 'white',
-
     },
     largeTeamImage: {
         width: 200,
         height: 200,
         borderRadius: 100,
-
+    },
+    teamImage: {
+        width: 200, 
+        height: 200,
+        borderRadius: 100,
+        borderWidth: 5,
+        borderColor: 'green',
     }
 
 });
